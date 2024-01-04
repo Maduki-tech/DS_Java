@@ -1,4 +1,4 @@
-package de.schlueter.linkedlist.stack;
+package de.schlueter.lists.stack;
 
 /**
  * Stack

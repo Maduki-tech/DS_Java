@@ -1,4 +1,4 @@
-package de.schlueter.linkedlist;
+package de.schlueter.lists.linkedlist;
 
 public class LinkedList{
     private Node head;
