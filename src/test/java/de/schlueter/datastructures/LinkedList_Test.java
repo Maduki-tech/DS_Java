@@ -37,8 +37,5 @@ public class LinkedList_Test {
         assertEquals(5, sut.length());
 
         System.out.println(sut.length());
-
-
-
     }
 }

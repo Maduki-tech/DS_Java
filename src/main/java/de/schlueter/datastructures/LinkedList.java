@@ -22,8 +22,8 @@ public class LinkedList {
     /**
      * Add a node to the head of the list
      *
-     * @param value 
-     * @return 
+     * @param value
+     * @return
      */
     public Node addNode(int value) {
         Node temp = new Node(value);
@@ -54,14 +54,14 @@ public class LinkedList {
     /**
      * Get the node by its **index**
      *
-     * @param index 
-     * @return 
+     * @param index
+     * @return
      */
     public int getNode(int index) {
         Node result = head;
         int i = 0;
-        while(result != null){
-            if(i == index){
+        while (result != null) {
+            if (i == index) {
                 return result.value;
             }
 
@@ -92,15 +92,15 @@ public class LinkedList {
     /**
      * Remove Value by its index and return it
      *
-     * @param index 
-     * @return 
+     * @param index
+     * @return
      */
-    public int removeByIndex(int index){
+    public int removeByIndex(int index) {
         int value = 0;
         int i = 0;
         Node p = head;
-        while (p != null){
-            if(i == index){
+        while (p != null) {
+            if (i == index) {
                 p.node = p.node.node;
                 value = p.value;
                 break;
@@ -110,5 +110,4 @@ public class LinkedList {
         }
         return value;
     }
-
 }
