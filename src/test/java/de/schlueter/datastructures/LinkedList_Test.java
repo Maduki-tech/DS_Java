@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 public class LinkedList_Test {
-
     @Test
     void printLength_Test() {
         LinkedList sut = new LinkedList();
@@ -21,7 +20,7 @@ public class LinkedList_Test {
     }
 
     @Test
-    void delete_Test(){
+    void delete_Test() {
         LinkedList sut = new LinkedList();
 
         sut.addNode(1);
@@ -35,7 +34,5 @@ public class LinkedList_Test {
 
         assertEquals(4, res);
         assertEquals(5, sut.length());
-
-        System.out.println(sut.length());
     }
 }
