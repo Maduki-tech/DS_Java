@@ -24,10 +24,14 @@ public class Queue {
     }
 
     public int dequeue() {
+        if(this.front > this.size){
+            this.front = 0;
+        }
         if(rear < 0){
             throw new OutOfMemoryError("No Memory");
         }
 
+        this.rear--;
         return this.elements[this.front++];
 
 
