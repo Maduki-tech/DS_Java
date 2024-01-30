@@ -4,36 +4,35 @@ package de.schlueter.datastructures;
  * Queue
  */
 public class Queue {
-    private int size, front, rear;
+    private int size, front, rear, count;
     private int elements[];
 
     public Queue(int size) {
         this.size = size;
         this.front = 0;
         this.rear = 0;
+        this.count = 0;
         this.elements = new int[size];
     }
 
     public void enqueue(int value) {
-        if (front > size) {
-            throw new OutOfMemoryError("No Memory");
+        if (this.count == this.size) {
+            throw new IllegalStateException("Queue is full");
         }
 
         this.elements[this.rear] = value;
-        this.rear++;
+        this.rear = (this.rear + 1) % this.size;
+        this.count++;
     }
 
     public int dequeue() {
-        if(this.front > this.size){
-            this.front = 0;
-        }
-        if(rear < 0){
-            throw new OutOfMemoryError("No Memory");
+        if (count == 0) {
+            throw new IllegalStateException("Queue is empty");
         }
 
-        this.rear--;
-        return this.elements[this.front++];
-
-
+        int value = this.elements[this.front];
+        this.front = (this.front + 1) % this.size;
+        this.count--;
+        return value;
     }
 }

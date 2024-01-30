@@ -1,6 +1,7 @@
 package de.schlueter.datastructures;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import org.junit.jupiter.api.Test;
 
@@ -23,12 +24,13 @@ public class Queue_Test {
         assertEquals(8, sut.dequeue());
 
         sut.enqueue(4);
-        sut.enqueue(1);
 
         assertEquals(7, sut.dequeue());
         assertEquals(5, sut.dequeue());
         assertEquals(4, sut.dequeue());
-        assertEquals(1, sut.dequeue());
+        assertThrows(IllegalStateException.class, () -> {
+            sut.dequeue(); // This should throw an exception as the queue is empty now
+        });
 
 
 
